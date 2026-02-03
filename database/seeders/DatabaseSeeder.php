@@ -35,6 +35,14 @@ class DatabaseSeeder extends Seeder
                 'password' => bcrypt('123456'),
                 'role' => 'siswa'
             ],
+            [
+                'nama' => 'Anything',
+                'username' => 'anything',
+                'email' => 'anyyy@gmail.com',
+                'jabatan' => '',
+                'password' => bcrypt('123456'),
+                'role' => 'siswa'
+            ],
         ];
 
         foreach ($dataUser as $user) {
@@ -45,6 +53,12 @@ class DatabaseSeeder extends Seeder
             [
                 'user_id' => 2,
                 'nis' => '12345678',
+                'kelas' => '12 RPL',
+                'jurusan' => 'PPLG'
+            ],
+            [
+                'user_id' => 3,
+                'nis' => '12345679',
                 'kelas' => '12 RPL',
                 'jurusan' => 'PPLG'
             ],
@@ -98,11 +112,11 @@ class DatabaseSeeder extends Seeder
                 'status' => 'diproses',
             ],
             [
-                'siswa_id' => 1,
+                'siswa_id' => 2,
                 'kategori_id' => 2,
                 'judul' => 'Toilet Mampat',
                 'isi' => 'Mohon di cek, Toilet perempuan di No 2, Saluran Airnya mampat',
-                'status' => 'selesai',
+                'status' => 'menunggu',
             ],
         ];
         foreach ($dataAspirasi as $aspirasi) {
