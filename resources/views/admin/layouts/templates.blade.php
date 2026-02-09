@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Admin Dashboard | {{ $title }}</title>
-    
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css" />
     <!-- Font Awesome -->
@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="dashboard-wrapper d-flex">
-    
+
     <!-- SIDEBAR -->
     @include('admin.layouts.sidebar')
 
@@ -25,7 +25,7 @@
             <div class="dashboard-title fw-bold">
                 <i class="fa fa-bars me-2"></i> {{ $title }}
             </div>
-            
+
             <div class="dashboard-header-right d-flex align-items-center gap-3">
                 <div class="dashboard-profile d-flex align-items-center gap-2">
                     <i class="fa-solid fa-user fa-lg"></i>
@@ -49,5 +49,7 @@
         window.location.href = this.href;
     });
 </script>
+
+    <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
 </html>
