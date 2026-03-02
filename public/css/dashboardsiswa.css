@@ -12,6 +12,7 @@ body {
     background: #f4f6fb;
 }
 
+
 /* ========================
    TOPBAR
 ======================== */
@@ -53,9 +54,14 @@ body {
     font-size: 14px;
 }
 
+.logout-btn:hover {
+    background: #d9363e;
+}
+
 .logout-btn i {
     margin-right: 5px;
 }
+
 
 /* ========================
    CONTAINER
@@ -66,6 +72,7 @@ body {
     padding: 20px;
 }
 
+
 /* ========================
    WELCOME
 ======================== */
@@ -73,6 +80,11 @@ body {
     text-align: center;
     margin-bottom: 30px;
 }
+
+.welcome h2 {
+    margin-bottom: 5px;
+}
+
 
 /* ========================
    CARDS
@@ -88,7 +100,7 @@ body {
     padding: 20px;
     border-radius: 12px;
     color: #fff;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .card p {
@@ -100,19 +112,28 @@ body {
     margin-top: 10px;
 }
 
+
 /* CARD COLORS */
 .blue {
     background: linear-gradient(135deg, #4f79ff, #6b8cff);
 }
+
 .orange {
     background: linear-gradient(135deg, #ff9f43, #ffb347);
 }
+
 .green {
     background: linear-gradient(135deg, #27ae60, #6fcf97);
 }
+
 .teal {
     background: linear-gradient(135deg, #16a085, #1abc9c);
 }
+
+.bg-danger {
+    background: linear-gradient(135deg, #ff4d4f, #ff7875);
+}
+
 
 /* ========================
    SUBMIT BUTTON
@@ -132,6 +153,11 @@ body {
     cursor: pointer;
 }
 
+.submit-btn:hover {
+    opacity: 0.9;
+}
+
+
 /* ========================
    TABLE
 ======================== */
@@ -139,7 +165,7 @@ body {
     background: white;
     padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 .table-box h3 {
@@ -162,6 +188,11 @@ td {
     border-bottom: 1px solid #ddd;
 }
 
+tbody tr:hover {
+    background: #f9fafc;
+}
+
+
 /* ========================
    STATUS BADGES
 ======================== */
@@ -170,30 +201,94 @@ td {
     border-radius: 20px;
     font-size: 12px;
     color: white;
-    text-transform: capitalize; /* otomatis huruf pertama besar */
+    text-transform: capitalize;
+    display: inline-block;
 }
 
-/* class status sesuai database */
-.status.menunggu { background: #f2994a; }   /* oranye */
-.status.diproses { background: #27ae60; }   /* hijau */
-.status.selesai  { background: #16a085; }   /* teal */
+.status.menunggu {
+    background: #f2994a;
+}
+
+.status.diproses {
+    background: #27ae60;
+}
+
+.status.selesai {
+    background: #16a085;
+}
+
+.status.ditolak {
+    background: #e61616;
+}
+
+
+/* ========================
+   BUTTON TABLE AKSI
+======================== */
+td .btn {
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+td .btn + .btn {
+    margin-left: 6px;
+}
+
+
+/* EDIT */
+.btn-info {
+    background: #3498db;
+}
+
+.btn-info:hover {
+    background: #2980b9;
+}
+
+
+/* DELETE */
+.btn-danger {
+    background: #e74c3c;
+}
+
+.btn-danger:hover {
+    background: #c0392b;
+}
+
+
+/* DISABLED */
+.btn.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
 
 /* ========================
    RESPONSIVE
 ======================== */
 @media (max-width: 900px) {
+
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+
 }
 
 @media (max-width: 600px) {
+
     .cards {
         grid-template-columns: 1fr;
     }
+
     .topbar {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
+
 }

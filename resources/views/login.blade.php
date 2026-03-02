@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Aspirasi Sekolah</title>
+    <title>Login Sarana Prasarana</title>
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
 
-<div class="login-box">
-    <!-- LOGO SEKOLAH -->
-    <div class="logo">
-        <img src="{{asset ('logo_smkpn.jpg')}}" alt="Logo SMK PN">
+<div class="container">
+
+    <!-- LEFT LOGIN -->
+    <div class="login-box">
+
+        <img src="{{ asset('logo_smkpn.jpg') }}" class="logo">
+
+        <h2>Sign in</h2>
+
+        <form action="{{ route('login.process') }}" method="POST">
+            @csrf
+
+            <input type="email" name="email" placeholder="Email siswa" required>
+
+            <input type="password" name="password" placeholder="Password" required>
+
+            <button type="submit">SIGN IN</button>
+        </form>
+
     </div>
 
-    <form action="{{ route('login.process') }}" method="POST">
-        @csrf
-        <h2>Login Aspirasi Sekolah</h2>
-        <p class="subtitle">Wadah Aspirasi Siswa</p>
 
-        <label>Email</label>
-        <input type="email" name="email" id="email" placeholder="Masukkan email" required>
+    <!-- RIGHT INFO -->
+    <div class="info-box">
 
-        <label>Password</label>
-        <input type="password" name="password" id="password" placeholder="Masukkan password" required>
+        <h1>Sarana & Prasarana</h1>
 
-        <div class="options">
-            <label>
-                <input type="checkbox"> Remember me
-            </label>
-            <a href="#">Lupa password</a>
-        </div>
+        <p>
+            Sistem pengaduan fasilitas sekolah
+            SMK Purnawarman
+        </p>
 
-        <button type="submit">Login</button>
-    </form>
+    </div>
 
-    <p class="registe
+</div>
+
+</body>
+</html>

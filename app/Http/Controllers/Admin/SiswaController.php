@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Siswa;
 use Illuminate\Http\Request;
-use App\Services\UserSiswaServices;
+use App\Services\UserSiswaService;
 use App\Http\Controllers\Controller;
 
 class SiswaController extends Controller
 {
     public function __construct(
-        private UserSiswaServices $service
+        private UserSiswaService $service
     ){}
 
 

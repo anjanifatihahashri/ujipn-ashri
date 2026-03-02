@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\Aspirasi;
+use App\Models\Kategori;
 use App\Models\User;
 use App\Models\Siswa;
-use App\Models\Kategori;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
@@ -20,25 +20,25 @@ class DatabaseSeeder extends Seeder
     {
         $dataUser = [
             [
-                'nama' => 'Slamet Kuatno, S.pd',
-                'username' => 'slametkuatno',
-                'email' => 'slametkuatno@gmail.com',
+                'nama' => 'Ashri Fatihah Anjani, S.kom',
+                'username' => 'ashri',
+                'email' => 'ashrinjani@gmail.com',
                 'jabatan' => 'Waka Sarpras',
                 'password' => bcrypt('admin'),
                 'role' => 'admin'
             ],
             [
-                'nama' => 'Ashri Fanjani',
-                'username' => 'ashrifanjani',
-                'email' => 'ashrifanjani@gmail.com',
+                'nama' => 'Alif Febrian Hanafiya',
+                'username' => 'alif',
+                'email' => 'aliffeb@gmail.com',
                 'jabatan' => '',
                 'password' => bcrypt('123456'),
                 'role' => 'siswa'
             ],
             [
-                'nama' => 'Anything',
-                'username' => 'anything',
-                'email' => 'anyyy@gmail.com',
+                'nama' => 'Kevna Abdul Fattah Hanafiya',
+                'username' => 'user-12345679',
+                'email' => 'kevnaabdul@gmail.com',
                 'jabatan' => '',
                 'password' => bcrypt('123456'),
                 'role' => 'siswa'
@@ -70,57 +70,73 @@ class DatabaseSeeder extends Seeder
         $dataKategori = [
             [
                 'nama_kategori' => 'Ruang Kelas',
-                'deskripsi' => 'Saran dan prasarana Ruang Kelas Siswa',
+                'deskripsi' => 'Sarana dan prasarana ruang kelas siswa'
             ],
             [
                 'nama_kategori' => 'Toilet',
-                'deskripsi' => 'Saran dan prasarana kamar mandi/toilet siswa',
+                'deskripsi' => 'Sarana dan prasarana kamar mandi/toilet siswa'
             ],
             [
                 'nama_kategori' => 'Sekolah',
-                'deskripsi' => 'Saran dan prasarana sekolah',
+                'deskripsi' => 'Sarana dan prasarana sekolah'
             ],
             [
                 'nama_kategori' => 'Laboratorium Komputer',
-                'deskripsi' => 'Saran dan prasarana Laboratorium Komputer sekolah',
+                'deskripsi' => 'Sarana dan prasarana laboratorium komputer sekolah'
             ],
         ];
+
         foreach ($dataKategori as $kategori) {
             Kategori::create($kategori);
         }
 
-        $dataAspirasi =  [
+        $dataAspirasi = [
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
-                'judul' => 'Ac kurang dingin',
-                'isi' => 'Mohon di cek, AC di kelas 12 RPL mati',
+                'judul' => 'AC Kurang Dingin',
+                'isi' => 'Mohon di cek, AC di ruang kelas 12 RPL kurang dingin',
                 'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
-                'judul' => 'Lampu mati',
-                'isi' => 'Mohon di cek, Lampu di kelas 12 RPL mati',
-                'status' => 'diproses',
+                'judul' => 'Lampu Mati',
+                'isi' => 'Mohon di cek, lampu di ruang kelas 12 RPL mati',
+                'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 1,
                 'kategori_id' => 1,
                 'judul' => 'Bangku Kurang',
-                'isi' => 'Mohon di cek,  di kelas 12 RPL mati',
-                'status' => 'diproses',
+                'isi' => 'Mohon di cek, jumlah bangku tidak sesuai dengan jumlah total siswa di ruang kelas 12 RPL',
+                'status' => 'menunggu',
             ],
             [
                 'siswa_id' => 2,
                 'kategori_id' => 2,
-                'judul' => 'Toilet Mampat',
-                'isi' => 'Mohon di cek, Toilet perempuan di No 2, Saluran Airnya mampat',
+                'judul' => 'Toilet Mampet',
+                'isi' => 'Mohon di cek, toilet perempuan di kamar 2, saluran pembuangannya mampet',
+                'status' => 'menunggu',
+            ],
+            [
+                'siswa_id' => 2,
+                'kategori_id' => 1,
+                'judul' => 'Lampu Mati',
+                'isi' => 'Mohon di cek, lampu mati dongs',
+                'status' => 'menunggu',
+            ],
+            [
+                'siswa_id' => 2,
+                'kategori_id' => 1,
+                'judul' => 'Papan Tulis Rusak',
+                'isi' => 'Mohon di cek, papan tulis sudah pada bolong',
                 'status' => 'menunggu',
             ],
         ];
+
         foreach ($dataAspirasi as $aspirasi) {
             Aspirasi::create($aspirasi);
+        }
     }
-}
 }

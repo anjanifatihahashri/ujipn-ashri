@@ -145,6 +145,7 @@ th, td {
 .menunggu { background-color: #f97316; }
 .diproses { background-color: #22c55e; }
 .selesai { background-color: #14b8a6; }
+.ditolak { background-color: #d52222; }
 
 /* VIEW BUTTON */
 .btn-view {

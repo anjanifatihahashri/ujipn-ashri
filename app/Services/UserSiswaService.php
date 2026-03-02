@@ -6,20 +6,19 @@ use App\Models\User;
 use App\Models\Siswa;
 use Illuminate\Support\Facades\DB;
 
-class UserSiswaServices
+class UserSiswaService
 {
     public function create(array $data)
     {
-        return DB::transaction(function () use  ($data){
+        return DB::transaction(function () use ($data) {
             $user = User::create([
                 'nama' => $data['nama'],
                 'email' => $data['email'],
                 'username' => 'user-' . $data['nis'],
-                'password' => bcrypt('123456'),
+                'password' => bcrypt(123456),
                 'role' => 'siswa',
-                'jabatan' => ''
+                'jabatan' => '',
             ]);
-
             $siswa = Siswa::create([
                 'user_id' => $user->id,
                 'nis' => $data['nis'],
@@ -33,9 +32,10 @@ class UserSiswaServices
 
     public function edit(array $data)
     {
-        return DB::transaction(function () use  ($data){
+        return DB::transaction(function () use ($data) {
             $siswa = Siswa::find($data['id']);
             $user = $siswa->user;
+
             $user = $user->update([
                 'nama' => $data['nama'],
                 'email' => $data['email'],
@@ -47,20 +47,17 @@ class UserSiswaServices
                 'kelas' => $data['kelas'],
                 'jurusan' => $data['jurusan'],
             ]);
-
-           // return $user->load('siswa');
         });
     }
 
     public function delete(Siswa $siswa)
     {
         return DB::transaction(function () use ($siswa){
-
-            // hapus data siswa berdasarkan id
+            // hapus data siswa berdasakan id
             Siswa::find($siswa->id)->delete();
 
             // hapus data user berdasarkan user_id
             User::find($siswa->user_id)->delete();
-            });
+        });
     }
 }

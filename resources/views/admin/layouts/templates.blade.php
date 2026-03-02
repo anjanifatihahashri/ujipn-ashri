@@ -29,7 +29,7 @@
             <div class="dashboard-header-right d-flex align-items-center gap-3">
                 <div class="dashboard-profile d-flex align-items-center gap-2">
                     <i class="fa-solid fa-user fa-lg"></i>
-                    <span class="username">Admin</span>
+                    <span>{{ auth()->user()->username }}</span>
                 </div>
                 <a href="{{ route('logout') }}" id="logoutBtn" class="btn btn-logout d-flex align-items-center gap-1">
                     <i class="fa-solid fa-right-from-bracket"></i> Logout
@@ -51,5 +51,8 @@
 </script>
 
     <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script src="/js/jquery-4.0.0.min.js"></script>
+    @yield('script')
 </body>
 </html>
